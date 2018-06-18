@@ -13,6 +13,7 @@ public class SeedData {
 	public SeedData(JokeRepository jokeRepository) {
 		jokeRepository.save(new Joke("Why did the chicken cross the road?", "To get to the other side.", 2));
 		jokeRepository.save(new Joke("How do you make a tissue dance?", "Put a little boogie in it.", 5));
+		jokeRepository.save(new Joke("Lorem ipsum dolor sut amet", "Hello World!", 7));
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.el.jokes_mvc.models.Joke;
@@ -27,6 +28,21 @@ public class JokesController {
 		mv.addObject("jokes", jokes);
 		mv.setViewName("read");
 		return mv;
+	}
+	
+	@GetMapping("joke")
+	public String getJoke() {
+		return "/joke";
+	}
+	
+	@PostMapping("/joke")
+	public ModelAndView calculator(String userJoke, String userPunchLine, int userRating) {
+		ModelAndView mv = new ModelAndView();
+	    Joke newJoke = new Joke(userJoke, userPunchLine, userRating);
+	    jokeRepository.save(newJoke);
+		mv.addObject("jokes", newJoke);
+		mv.setViewName("read");
+		return mv; 
 	}
 
 }

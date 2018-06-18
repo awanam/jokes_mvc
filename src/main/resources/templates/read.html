@@ -3,12 +3,28 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Jokes MVC CRUD App</title>
+		<style>
+			table, th, td {
+			    border: 1px solid black;
+			}
+		</style>
 	</head>
 	<body>
-		
+		<table>
+		  <tr>
+		    <th>Jokes</th>
+		    <th>Punchline</th>
+		    <th>Rating</th>
+		  </tr>
+
+				
 		{{#jokes}}
-			{{joke}} - {{punchline}} - {{rating}} <br/>
-		{{/jokes}}
-		
+		  <tr>
+		    <td>{{joke}}</td>
+		    <td>{{punchline}}</td>
+		    <td>{{rating}}</td>
+		  </tr>
+		 {{/jokes}}
+		</table>		
 	</body>
 </html>
